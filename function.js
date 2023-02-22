@@ -153,11 +153,11 @@
 // console.log(furnitureList);
 // /* Çıktısı :
 // [
-//     'chair', 115.99, true,       
+//     'chair', 115.99, true,
 //     'seat', 123.99, false,
-//     'table', 52.99,true,      
+//     'table', 52.99,true,
 //     'bookshelf', 75.99, true,
-//     'wardrobe', 217.87,false,      
+//     'wardrobe', 217.87,false,
 //     'desk', 78.13,  true
 //   ] */
 
@@ -200,7 +200,89 @@ function tumElemanlariTopla() {
   return total;
 }
 
-console.log(tumElemanlariTopla(10,30,50,80)); //170
+console.log(tumElemanlariTopla(10, 30, 50, 80)); //170
+
+// 10 -
+
+function sum1(a, b) {
+  if (typeof a === "number" && typeof b === "number") {
+    console.log(a + b);
+  } else {
+    typeof a !== "number" &&
+      console.log(`a için girdiğin ${a} değeri kontrol etmelisin`);
+    typeof b !== "number" &&
+      console.log(`b için girdiğin ${b} değeri kontrol etmelisin`);
+  }
+}
+
+sum1(180, "SAYI");
+
+// 11 -
+
+function sum2() {
+  if (typeof arguments[0] === "number" && typeof arguments[1] === "number") {
+    console.log(arguments[0] + arguments[1]);
+  } else {
+    typeof arguments[0] !== "number" &&
+      console.log("ilk değeri kontrol ediniz.");
+    typeof arguments[1] !== "number" &&
+      console.log("son değeri kontrol ediniz");
+  }
+}
+sum2(30, 80);
+
+// 12 -
+
+function msj1(text) {
+  if (text === "DUKKD") {
+    console.log("Devler Ülkesindeki Karincalari Koruma Derneği");
+  } else {
+    console.log("Veriyi kontrol ediniz...");
+  }
+}
+
+msj1("DUKKD");
+
+// 13 -
+function coffeeMachine1(groundCoffe, water, filter) {
+  console.log("Kahve demleniyor...");
+  const brewedCoffee = `${water}ml coffee has been brewed with ${groundCoffe}gr ground coffee.`;
+  return brewedCoffee;
+  console.log("retunden sonra çalıimaz");
+}
+// const result = coffeeMachine(50, 500, true)
+console.log(coffeeMachine1(50, 500, true));
+
+console.log("-------------------------------");
+// 14 - function decleration - hoisted fonksiyonu direkt olarak değişene atabiliyoruz.
+function coffeeMachine2(groundCoffe, water, filter) {
+  console.log("Kahve demleniyor...");
+  const brewedCoffee = `${water}ml coffee has been brewed with ${groundCoffe}gr ground coffee `;
+  return brewedCoffee;
+  console.log("returnden sonra çalışmıyor...");
+}
+const result1 = coffeeMachine1(25, 250, true);
+console.log(result1);
+const func1 = coffeeMachine1;
+console.log(func1(25, 500));
+
+/*
+kod yukarıda tanımlanır. Aşağıya doğru okunur.
+hoisting kod komple jsİn runtime'si tarafından yukarı taşınıyor. 
+function declarationyukarı taşıma işlemi yapılabiliyor
+function expression - değişkene atanıyor yukarı taşınmıyor no hoisted
+arrow function this çalışmıyor no hoisting
+*/
+
+
+//16 arrow funtion not hoisted
+const getSquareExp = (num) => {
+    return num * num
+}
+console.log(getSquareExp(10))
+
+
+
 
 // // Function
 
