@@ -51,15 +51,88 @@ function addCountry4(newCountry) {
 addCountry4("hollanda");
 console.log(countries); // [ 'ispanya', 'mısır', 'norveç', 'hollanda' ]
 
-function changeLastCountry(newCountry) {
+function changeLastCountry1(newCountry) {
   if (newCountry) {
     countries.pop();
     countries.push(newCountry);
   }
 }
 
-changeLastCountry("portekiz");
+changeLastCountry1("portekiz");
 console.log(countries); // [ 'ispanya', 'mısır', 'norveç', 'portekiz' ]
+
+
+//5 b - 
+
+function addCountry5(newCountry) {
+    newCountry && countries.push(newCountry)
+}
+function changeLastCountry2(newCountry) {
+    if(newCountry) {
+        countries[countries.length -1] = newCountry
+    }
+}
+
+changeLastCountry2("abd")
+addCountry5("usa")
+console.log(countries) //[ 'ispanya', 'mısır', 'norveç', 'abd', 'usa' ]
+
+addCountry5()
+changeLastCountry2("ingiltere")
+console.log(countries) //[ 'ispanya', 'mısır', 'norveç', 'abd', 'ingiltere' ]
+
+//6 Defaut parametre - sen sona tanımlanır böylece vermeme imkanımız olur. 
+// birden fazla default değer tanımlayacaksak en fazla default kullanılacak değer en sona gidiyor. 
+
+function addCountry6(newCountry) {
+    newCountry && countries.push(newCountry)
+} 
+function changeLastCountry3(newCountry = "non-country"){
+    countries[countries.length -1] = newCountry;
+}
+addCountry6("mısır")
+changeLastCountry3()
+console.log(countries)  // [ 'ispanya', 'mısır', 'norveç', 'abd', 'ingiltere', 'non-country' ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // // Function
 
