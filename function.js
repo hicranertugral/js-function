@@ -94,6 +94,18 @@ addCountry6("mısır")
 changeLastCountry3()
 console.log(countries)  // [ 'ispanya', 'mısır', 'norveç', 'abd', 'ingiltere', 'non-country' ]
 
+// 7 - string değeri kontrol eden fonksiyon 
+function addCountry7(newCountry){
+    if(typeof newCountry === "string"){
+        countries.push(newCountry);
+    }else{
+        console.log("lütfen geçerli bir ülke adı giriniz");
+    }
+}
+
+addCountry7("fransa") // [ 'ispanya', 'mısır', 'norveç', 'abd', 'ingiltere', 'non-country', 'fransa' ]
+addCountry7(7) // lütfen geçerli bir ülke adı giriniz     [ 'ispanya', 'mısır', 'norveç', 'abd', 'ingiltere', 'non-country', 'fransa' ]
+console.log(countries)
 
 
 
