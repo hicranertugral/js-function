@@ -274,45 +274,107 @@ function expression - değişkene atanıyor yukarı taşınmıyor no hoisted
 arrow function this çalışmıyor no hoisting
 */
 
-
 //16 arrow funtion not hoisted
 const getSquareExp = (num) => {
-    return num * num
-}
-console.log(getSquareExp(10))
+  return num * num;
+};
+console.log(getSquareExp(10));
 
-//function decleration = > hoisteddir = > arrow function ile kullanımı aynıdır kullanım açısından arrow function tercih edilir. 
+//function decleration = > hoisteddir = > arrow function ile kullanımı aynıdır kullanım açısından arrow function tercih edilir.
 function getSquareArrow(num) {
-    return num*num
+  return num * num;
 }
-console.log(getSquareArrow (5))
+console.log(getSquareArrow(5));
 
+const students = [
+  "Guntac Bey", //0
+  "Ahmet Bilgin", //1
+  "Sefa Sarikaya", //2
+  "Senay Senturk", //3
+  "Ipek Gulsen Celik", //4
+];
 
-// sadeleştirilmesi 
-//arrow function tek bir parametre alıyorsa (num) parametresiz yazılabilir. 
-// 1 expression döndürülecekse süslü paranteze gerek yok. 
-// returne de gerek yok 
-// parametre almıyorsa () parantez açıp kapatmak zorundayız. 
+// Function Declaration - Hoisted
+function addStudent() {
+  students.push("Emre Candemir");
+}
+console.log(students); // ['Guntac Bey', 'Ahmet Bilgin', 'Sefa Sarikaya' ,'Senay Senturk', 'Ipek Gulsen Celik']
+
+addStudent();
+console.log(students); // ['Guntac Bey', 'Ahmet Bilgin', 'Sefa Sarikaya' ,'Senay Senturk', 'Ipek Gulsen Celik', 'Emre Candemir']
+
+function addStudent(newStudent) {
+  students.push(newStudent);
+}
+
+addStudent();
+
+const saat = 20;
+
+if (saat <= 9) {
+  console.log("günaydin");
+} else if (saat <= 19) {
+  console.log("iyi öğlenler");
+} else {
+  console.log("iyi geceler");
+}
+
+const not = 20;
+
+if (not >= 50) {
+  console.log("geçti");
+} else {
+  console.log("kaldı");
+}
+
+//ternary opertor
+console.log(not >= 50 ? "geçti" : "kaldı");
+
+// sadeleştirilmesi
+//arrow function tek bir parametre alıyorsa (num) parametresiz yazılabilir.
+// 1 expression döndürülecekse süslü paranteze gerek yok.
+// returne de gerek yok
+// parametre almıyorsa () parantez açıp kapatmak zorundayız.
 // => fat arraw
 
 // implicit return num*num parantez içine alındığında ya da hiç bir şey koyulmadığında return et demek. (tek satırda yazmak)
-// süslü parantez var ise mutlaka return çalıştırmamız gerekiyor. 
+// süslü parantez var ise mutlaka return çalıştırmamız gerekiyor.
 
-const getSquareArrow1 = (num) => num*num 
-// num*num süslü parantez içine alırsak parametre almıyorsa () parantez açıp kapamak zorundayız. 
-console.log(getSquareArrow1(8))
+const getSquareArrow1 = (num) => num * num;
+// num*num süslü parantez içine alırsak parametre almıyorsa () parantez açıp kapamak zorundayız.
+console.log(getSquareArrow1(8));
 
-// parametre almıyorsa () parantez açıp kapamak zorundayız. 
-const logHello = () => console.log("hello word")
-logHello()
+// parametre almıyorsa () parantez açıp kapamak zorundayız.
+const logHello = () => console.log("hello word");
+logHello();
 
-// mutlaka word1 ve word2 parantez içine yazmalı 2 parametre olduğu için 
-const logSomethng = (word1, word2) => console.log("Hello", word1, word2)
-logSomethng("dünya", "benim")
+// mutlaka word1 ve word2 parantez içine yazmalı 2 parametre olduğu için
+const logSomethng = (word1, word2) => console.log("Hello", word1, word2);
+logSomethng("dünya", "benim");
 
+//17 a arrow function a göre
+const calculateDogAge = (age, isHuman = false) => {
+  if (!isHuman) {
+    return `Your dog is ${age * 7} years old`;
+  } else {
+    return `This value ${age}, is not suitable for dog year`;
+  }
+};
+console.log(calculateDogAge(10, true));
 
+// 17 b
 
+const myArrowFunc = (word) => console.log(word);
+myArrowFunc("Hello!");
 
+// 18 declaration functiona örnek
 
+function calculateDogAge1(age, isHuman = false) {
+  if (!isHuman) {
+    return `your dog is ${age}, is not suitible for dog year`;
+  } else {
+    return `This value ${age}, is not suitible for dog year.`;
+  }
+}
 
-
+console.log(calculateDogAge1(15, true));
