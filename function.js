@@ -281,6 +281,13 @@ const getSquareExp = (num) => {
 }
 console.log(getSquareExp(10))
 
+//function decleration = > hoisteddir = > arrow function ile kullanımı aynıdır kullanım açısından arrow function tercih edilir. 
+function getSquareArrow(num) {
+    return num*num
+}
+console.log(getSquareArrow (5))
+
+
 
 
 
