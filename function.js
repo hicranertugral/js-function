@@ -287,3 +287,4 @@ function getSquareArrow(num) {
 }
 console.log(getSquareArrow (5))
 
+
