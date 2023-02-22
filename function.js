@@ -61,72 +61,123 @@ function changeLastCountry1(newCountry) {
 changeLastCountry1("portekiz");
 console.log(countries); // [ 'ispanya', 'mısır', 'norveç', 'portekiz' ]
 
-
-//5 b - 
+//5 b -
 
 function addCountry5(newCountry) {
-    newCountry && countries.push(newCountry)
+  newCountry && countries.push(newCountry);
 }
 function changeLastCountry2(newCountry) {
-    if(newCountry) {
-        countries[countries.length -1] = newCountry
-    }
+  if (newCountry) {
+    countries[countries.length - 1] = newCountry;
+  }
 }
 
-changeLastCountry2("abd")
-addCountry5("usa")
-console.log(countries) //[ 'ispanya', 'mısır', 'norveç', 'abd', 'usa' ]
+changeLastCountry2("abd");
+addCountry5("usa");
+console.log(countries); //[ 'ispanya', 'mısır', 'norveç', 'abd', 'usa' ]
 
-addCountry5()
-changeLastCountry2("ingiltere")
-console.log(countries) //[ 'ispanya', 'mısır', 'norveç', 'abd', 'ingiltere' ]
+addCountry5();
+changeLastCountry2("ingiltere");
+console.log(countries); //[ 'ispanya', 'mısır', 'norveç', 'abd', 'ingiltere' ]
 
-//6 Defaut parametre - sen sona tanımlanır böylece vermeme imkanımız olur. 
-// birden fazla default değer tanımlayacaksak en fazla default kullanılacak değer en sona gidiyor. 
+//6 Defaut parametre - sen sona tanımlanır böylece vermeme imkanımız olur.
+// birden fazla default değer tanımlayacaksak en fazla default kullanılacak değer en sona gidiyor.
 
 function addCountry6(newCountry) {
-    newCountry && countries.push(newCountry)
-} 
-function changeLastCountry3(newCountry = "non-country"){
-    countries[countries.length -1] = newCountry;
+  newCountry && countries.push(newCountry);
 }
-addCountry6("mısır")
-changeLastCountry3()
-console.log(countries)  // [ 'ispanya', 'mısır', 'norveç', 'abd', 'ingiltere', 'non-country' ]
+function changeLastCountry3(newCountry = "non-country") {
+  countries[countries.length - 1] = newCountry;
+}
+addCountry6("mısır");
+changeLastCountry3();
+console.log(countries); // [ 'ispanya', 'mısır', 'norveç', 'abd', 'ingiltere', 'non-country' ]
 
-// 7 - string değeri kontrol eden fonksiyon 
-function addCountry7(newCountry){
-    if(typeof newCountry === "string"){
-        countries.push(newCountry);
-    }else{
-        console.log("lütfen geçerli bir ülke adı giriniz");
+// 7 - string değeri kontrol eden fonksiyon
+function addCountry7(newCountry) {
+  if (typeof newCountry === "string") {
+    countries.push(newCountry);
+  } else {
+    console.log("lütfen geçerli bir ülke adı giriniz");
+  }
+}
+
+addCountry7("fransa"); // [ 'ispanya', 'mısır', 'norveç', 'abd', 'ingiltere', 'non-country', 'fransa' ]
+addCountry7(7); // lütfen geçerli bir ülke adı giriniz     [ 'ispanya', 'mısır', 'norveç', 'abd', 'ingiltere', 'non-country', 'fransa' ]
+console.log(countries);
+
+//8 a ürün bilgilerinden (isim fiyat ve stok değeri) girilmediğinde / tipi tutmadığında uyarı veren fonksiyon
+
+const furnitureList = [
+  "chair",
+  115.99,
+  true,
+  "seat",
+  123.99,
+  false,
+  "table",
+  52.99,
+  true,
+  "bookshelf",
+  75.99,
+  true,
+  "wardrobe",
+  217.87,
+  false,
+];
+
+function addFurnitureList1(name, price, onStock) {
+  if (
+    typeof name === "string" &&
+    typeof price === "number" &&
+    typeof onStock === "boolean"
+  ) {
+    furnitureList.push(name);
+    furnitureList.push(price);
+    furnitureList.push(onStock);
+  } else {
+    if (typeof name !== "string") {
+      console.log("Mobilya adını giriniz");
+    }
+    if (typeof price !== "number") {
+      console.log("Fiyatı giriniz.");
+    }
+    if (typeof onStock !== "boolean") {
+      console.log("stok değeri giriniz");
+    }
+  }
+}
+
+addFurnitureList1("desk", 78.13, true)
+
+console.log(furnitureList)
+/* Çıktısı :
+[
+    'chair', 115.99, true,       
+    'seat', 123.99, false,
+    'table', 52.99,true,      
+    'bookshelf', 75.99, true,
+    'wardrobe', 217.87,false,      
+    'desk', 78.13,  true
+  ] */
+
+// 8 b stok değerini default olarak atamak
+function addFurnitureList2(name, price, onStock = true) {
+    if(
+        typeof name === "string" && typeof price === "number"
+    ){
+        furnitureList.push(name);
+        furnitureList.push(price);
+        furnitureList.push(onStock);
+    } else {
+        typeof name !== "string" && console.log("isim giriniz / kontrol ediniz")
+        typeof price !== "number" && console.log("fiyat firiniz / kontrol ediniz");
+        typeof onStock !== "boolean" && console.log("Stok giriniz / kontrol ediniz.");
     }
 }
 
-addCountry7("fransa") // [ 'ispanya', 'mısır', 'norveç', 'abd', 'ingiltere', 'non-country', 'fransa' ]
-addCountry7(7) // lütfen geçerli bir ülke adı giriniz     [ 'ispanya', 'mısır', 'norveç', 'abd', 'ingiltere', 'non-country', 'fransa' ]
-console.log(countries)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+addFurnitureList2("sofa")
+console.log(furnitureList)
 
 
 
