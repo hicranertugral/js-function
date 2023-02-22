@@ -371,10 +371,14 @@ myArrowFunc("Hello!");
 
 function calculateDogAge1(age, isHuman = false) {
   if (!isHuman) {
-    return `your dog is ${age}, is not suitible for dog year`;
+    return `your dog is ${age * 7}, is not suitible for dog year`;
   } else {
     return `This value ${age}, is not suitible for dog year.`;
   }
 }
 
 console.log(calculateDogAge1(15, true));
+
+// değişkene atama yaparak 
+const resultDA = calculateDogAge1(20, false)
+console.log(resultDA)
