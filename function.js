@@ -295,9 +295,24 @@ console.log(getSquareArrow (5))
 // parametre almıyorsa () parantez açıp kapatmak zorundayız. 
 // => fat arraw
 
-// implicit return num*num parantez içine alındığında ya da hiç bir şey koyulmadığında return et demek. 
+// implicit return num*num parantez içine alındığında ya da hiç bir şey koyulmadığında return et demek. (tek satırda yazmak)
 // süslü parantez var ise mutlaka return çalıştırmamız gerekiyor. 
 
 const getSquareArrow1 = (num) => num*num 
+// num*num süslü parantez içine alırsak parametre almıyorsa () parantez açıp kapamak zorundayız. 
 console.log(getSquareArrow1(8))
+
+// parametre almıyorsa () parantez açıp kapamak zorundayız. 
+const logHello = () => console.log("hello word")
+logHello()
+
+// mutlaka word1 ve word2 parantez içine yazmalı 2 parametre olduğu için 
+const logSomethng = (word1, word2) => console.log("Hello", word1, word2)
+logSomethng("dünya", "benim")
+
+
+
+
+
+
 
