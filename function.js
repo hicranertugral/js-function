@@ -288,3 +288,16 @@ function getSquareArrow(num) {
 console.log(getSquareArrow (5))
 
 
+// sadeleştirilmesi 
+//arrow function tek bir parametre alıyorsa (num) parametresiz yazılabilir. 
+// 1 expression döndürülecekse süslü paranteze gerek yok. 
+// returne de gerek yok 
+// parametre almıyorsa () parantez açıp kapatmak zorundayız. 
+// => fat arraw
+
+// implicit return num*num parantez içine alındığında ya da hiç bir şey koyulmadığında return et demek. 
+// süslü parantez var ise mutlaka return çalıştırmamız gerekiyor. 
+
+const getSquareArrow1 = (num) => num*num 
+console.log(getSquareArrow1(8))
+
