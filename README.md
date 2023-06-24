@@ -1,4 +1,4 @@
-# js-function
+<!-- # js-function
 Fonksiyon tanımı : algoritmayı çalıştırma biçimi, belli bir amaç için tekrar tekrar yaptıracağımız işlemeri yapmak için kullanıyoruz.
 Fonksiyon örneği : kattle       / çamaşır makinesi
 Paramtre : su haznesi           / deterjan haznesi
@@ -21,4 +21,4 @@ arrow function tek bir parametre alıyorsa (param) parametresiz yazılabilir.
 => fat arraw
 
 implicit return num*num parantez içine alındığında ya da hiç bir şey koyulmadığında return et demek. (tek satırda yazmak)
-süslü parantez var ise mutlaka return çalıştırmamız gerekiyor.
+süslü parantez var ise mutlaka return çalıştırmamız gerekiyor. -->
